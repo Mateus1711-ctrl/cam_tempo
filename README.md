@@ -1,5 +1,5 @@
 
-# Projeto Câmera - Efeitos de Vídeo em Tempo Real
+# Projeto Câmera
 
 ## Descrição
 
