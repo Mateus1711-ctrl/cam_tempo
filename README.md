@@ -42,24 +42,22 @@ S =
 A interpolação bilinear é usada para suavizar os pixels transformados, calculando uma média ponderada entre os pixels adjacentes, evitando artefatos visuais.
 
 ## Instruções de Uso
+### Execução via setup.py
 
-### Requisitos
+Este projeto foi configurado para ser instalado via o arquivo `setup.py`. Para instalar e rodar o projeto, siga os seguintes passos:
 
-Instale as bibliotecas necessárias com o seguinte comando:
+1. No terminal, navegue até o diretório do projeto onde está o arquivo `setup.py`.
+2. Instale o projeto localmente com o comando:
 
-```
-pip install opencv-python numpy
-```
+   ```
+   pip install .
+   ```
 
-### Execução
+3. Após a instalação, você pode rodar o programa com o comando:
 
-1. Clone o repositório.
-2. Navegue até o diretório do arquivo no terminal.
-3. Execute o script com o seguinte comando:
-
-```
-python demo.py
-```
+   ```
+   demo
+   ```
 
 ### Controles
 
