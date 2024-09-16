@@ -70,7 +70,7 @@ pip install opencv-python numpy
 3. Execute o script com o seguinte comando:
 
 ```bash
-python main.py
+python demo.py
 ```
 
 ### Controles do Teclado
