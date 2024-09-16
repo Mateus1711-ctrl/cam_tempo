@@ -37,10 +37,13 @@ def apply_transformation(frame, M):
     origin_pixels = np.linalg.inv(M) @ destination_pixels
     origin_pixels = origin_pixels[:2] / origin_pixels[2]
     
-    x_o = np.clip(np.round(origin_pixels[0]).astype(int), 0, cols - 1)
-    y_o = np.clip(np.round(origin_pixels[1]).astype(int), 0, rows - 1)
+    x_o = np.clip(origin_pixels[0], 0, cols - 1).astype(np.float32)
+    y_o = np.clip(origin_pixels[1], 0, rows - 1).astype(np.float32)
     
-    transformed_frame = frame[y_o, x_o].reshape((rows, cols, 3))
+    map_x = x_o.reshape((rows, cols))
+    map_y = y_o.reshape((rows, cols))
+    
+    transformed_frame = cv2.remap(frame, map_x, map_y, interpolation=cv2.INTER_LINEAR)
     
     return transformed_frame
 
@@ -57,11 +60,16 @@ def main():
     fps = 30
     delay = int(1000 / fps)
     
+    # Ajuste a resolução para melhorar a fluidez
+    target_width = 640
+    target_height = 480
+    
     while True:
         ret, frame = cap.read()
         if not ret:
             break
         
+        frame = cv2.resize(frame, (target_width, target_height))
         rows, cols = frame.shape[:2]
         center = (cols / 2, rows / 2)
         
