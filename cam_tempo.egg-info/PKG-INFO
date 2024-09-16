@@ -1,0 +1,85 @@
+Metadata-Version: 2.1
+Name: cam-tempo
+Version: 0.1.0
+Summary: Projeto Câmera
+Home-page: https://github.com/Mateus1711-ctrl/cam_tempo?tab=readme-ov-file
+Author: João Delomo, Mateus Porto
+Author-email: delominho@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+
+# Projeto CÃ¢mera
+
+## DescriÃ§Ã£o
+
+Este projeto implementa um processador de vÃ­deo em tempo real que aplica efeitos de **rotaÃ§Ã£o** e **cisalhamento**, com interpolaÃ§Ã£o bilinear, sobre o feed da cÃ¢mera. O cÃ³digo foi desenvolvido em **Python** usando **NumPy** para as transformaÃ§Ãµes geomÃ©tricas e **OpenCV** para a captura do feed de vÃ­deo. As transformaÃ§Ãµes sÃ£o aplicadas de maneira contÃ­nua e fluida, com controles interativos via teclado para ajuste da rotaÃ§Ã£o e do cisalhamento.
+
+### Principais Funcionalidades
+
+- **RotaÃ§Ã£o contÃ­nua**: A imagem gira continuamente ao redor do centro da tela.
+- **Cisalhamento horizontal**: Um efeito de distorÃ§Ã£o horizontal pode ser aplicado e ajustado em tempo real.
+- **InterpolaÃ§Ã£o Bilinear**: Utilizada para suavizar a imagem durante as transformaÃ§Ãµes, evitando artefatos visuais.
+- **Controle dinÃ¢mico**: O usuÃ¡rio pode ajustar a velocidade da rotaÃ§Ã£o e a intensidade do cisalhamento em tempo real.
+- **ExecuÃ§Ã£o simples**: Basta rodar o script para comeÃ§ar a aplicar os efeitos no feed da sua webcam.
+
+## Como Funciona
+
+O sistema utiliza **matrizes de transformaÃ§Ã£o** para realizar rotaÃ§Ã£o e cisalhamento da imagem em tempo real. A rotaÃ§Ã£o acontece ao redor do centro da imagem, utilizando translaÃ§Ãµes para mover o centro para a origem e, apÃ³s a rotaÃ§Ã£o, devolvÃª-lo Ã  posiÃ§Ã£o original. A interpolaÃ§Ã£o bilinear suaviza a transiÃ§Ã£o entre os pixels durante a transformaÃ§Ã£o, melhorando a qualidade da imagem.
+
+### MatemÃ¡tica por trÃ¡s
+
+#### RotaÃ§Ã£o
+
+A rotaÃ§Ã£o Ã© feita com a matriz de rotaÃ§Ã£o:
+
+R(Î¸) =
+[ cos(Î¸), -sin(Î¸), 0 ]
+[ sin(Î¸), cos(Î¸), 0 ]
+[ 0, 0, 1 ]
+
+#### Cisalhamento
+
+O cisalhamento horizontal Ã© realizado com a seguinte matriz:
+
+S =
+[ 1, shear_factor, 0 ]
+[ 0, 1, 0 ]
+[ 0, 0, 1 ]
+
+#### InterpolaÃ§Ã£o Bilinear
+
+A interpolaÃ§Ã£o bilinear Ã© usada para suavizar os pixels transformados, calculando uma mÃ©dia ponderada entre os pixels adjacentes, evitando artefatos visuais.
+
+## InstruÃ§Ãµes de Uso
+### ExecuÃ§Ã£o via setup.py
+
+Este projeto foi configurado para ser instalado via o arquivo `setup.py`. Para instalar e rodar o projeto, siga os seguintes passos:
+
+1. No terminal, navegue atÃ© o diretÃ³rio do projeto onde estÃ¡ o arquivo `setup.py`.
+2. Instale o projeto localmente com o comando:
+
+   ```
+   pip install .
+   ```
+
+3. ApÃ³s a instalaÃ§Ã£o, vocÃª pode rodar o programa com o comando:
+
+   ```
+   demo
+   ```
+
+### Controles
+
+- **W**: Aumenta a velocidade da rotaÃ§Ã£o.
+- **S**: Diminui a velocidade da rotaÃ§Ã£o.
+- **A**: Aumenta o cisalhamento horizontal.
+- **D**: Diminui o cisalhamento horizontal.
+- **Q**: Fecha o programa.
+
+## Autores
+
+Desenvolvido por [JoÃ£o Delomo](https://github.com/JoaoDelomo) e [Mateus Porto](https://github.com/Mateus1711-ctrl).
