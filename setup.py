@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='Projeto Câmera',
+    name='cam_tempo',
     version='1.0',
     packages=find_packages(),
     install_requires=[
@@ -10,7 +10,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'demo=demo:main',
+            'cam_tempo=cam_tempo:demo',
         ],
     },
     author='João Delomo, Mateus Porto',
