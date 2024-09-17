@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: cam-tempo
 Version: 0.1.0
-Summary: Projeto Câmera
-Home-page: https://github.com/Mateus1711-ctrl/cam_tempo?tab=readme-ov-file
+Summary: Projeto de processamento de vídeo com efeitos em tempo real
+Home-page: https://github.com/Mateus1711-ctrl/cam_tempo
 Author: João Delomo, Mateus Porto
 Author-email: delominho@gmail.com
 Classifier: Programming Language :: Python :: 3
@@ -12,61 +12,61 @@ Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 
 
-# Projeto CÃ¢mera
+# Projeto Câmera
 
-## DescriÃ§Ã£o
+## Descrição
 
-Este projeto implementa um processador de vÃ­deo em tempo real que aplica efeitos de **rotaÃ§Ã£o** e **cisalhamento**, com interpolaÃ§Ã£o bilinear, sobre o feed da cÃ¢mera. O cÃ³digo foi desenvolvido em **Python** usando **NumPy** para as transformaÃ§Ãµes geomÃ©tricas e **OpenCV** para a captura do feed de vÃ­deo. As transformaÃ§Ãµes sÃ£o aplicadas de maneira contÃ­nua e fluida, com controles interativos via teclado para ajuste da rotaÃ§Ã£o e do cisalhamento.
+Este projeto implementa um processador de vídeo em tempo real que aplica efeitos de **rotação** e **cisalhamento**, com interpolação bilinear, sobre o feed da câmera. O código foi desenvolvido em **Python** usando **NumPy** para as transformações geométricas e **OpenCV** para a captura do feed de vídeo. As transformações são aplicadas de maneira contínua e fluida, com controles interativos via teclado para ajuste da rotação e do cisalhamento.
 
 ### Principais Funcionalidades
 
-- **RotaÃ§Ã£o contÃ­nua**: A imagem gira continuamente ao redor do centro da tela.
-- **Cisalhamento horizontal**: Um efeito de distorÃ§Ã£o horizontal pode ser aplicado e ajustado em tempo real.
-- **InterpolaÃ§Ã£o Bilinear**: Utilizada para suavizar a imagem durante as transformaÃ§Ãµes, evitando artefatos visuais.
-- **Controle dinÃ¢mico**: O usuÃ¡rio pode ajustar a velocidade da rotaÃ§Ã£o e a intensidade do cisalhamento em tempo real.
-- **ExecuÃ§Ã£o simples**: Basta rodar o script para comeÃ§ar a aplicar os efeitos no feed da sua webcam.
+- **Rotação contínua**: A imagem gira continuamente ao redor do centro da tela.
+- **Cisalhamento horizontal**: Um efeito de distorção horizontal pode ser aplicado e ajustado em tempo real.
+- **Interpolação Bilinear**: Utilizada para suavizar a imagem durante as transformações, evitando artefatos visuais.
+- **Controle dinâmico**: O usuário pode ajustar a velocidade da rotação e a intensidade do cisalhamento em tempo real.
+- **Execução simples**: Basta rodar o script para começar a aplicar os efeitos no feed da sua webcam.
 
 ## Como Funciona
 
-O sistema utiliza **matrizes de transformaÃ§Ã£o** para realizar rotaÃ§Ã£o e cisalhamento da imagem em tempo real. A rotaÃ§Ã£o acontece ao redor do centro da imagem, utilizando translaÃ§Ãµes para mover o centro para a origem e, apÃ³s a rotaÃ§Ã£o, devolvÃª-lo Ã  posiÃ§Ã£o original. A interpolaÃ§Ã£o bilinear suaviza a transiÃ§Ã£o entre os pixels durante a transformaÃ§Ã£o, melhorando a qualidade da imagem.
+O sistema utiliza **matrizes de transformação** para realizar rotação e cisalhamento da imagem em tempo real. A rotação acontece ao redor do centro da imagem, utilizando translações para mover o centro para a origem e, após a rotação, devolvê-lo à posição original. A interpolação bilinear suaviza a transição entre os pixels durante a transformação, melhorando a qualidade da imagem.
 
-### MatemÃ¡tica por trÃ¡s
+### Matemática por trás
 
-#### RotaÃ§Ã£o
+#### Rotação
 
-A rotaÃ§Ã£o Ã© feita com a matriz de rotaÃ§Ã£o:
+A rotação é feita com a matriz de rotação:
 
-R(Î¸) =
-[ cos(Î¸), -sin(Î¸), 0 ]
-[ sin(Î¸), cos(Î¸), 0 ]
+R(θ) =
+[ cos(θ), -sin(θ), 0 ]
+[ sin(θ), cos(θ), 0 ]
 [ 0, 0, 1 ]
 
 #### Cisalhamento
 
-O cisalhamento horizontal Ã© realizado com a seguinte matriz:
+O cisalhamento horizontal é realizado com a seguinte matriz:
 
 S =
 [ 1, shear_factor, 0 ]
 [ 0, 1, 0 ]
 [ 0, 0, 1 ]
 
-#### InterpolaÃ§Ã£o Bilinear
+#### Interpolação Bilinear
 
-A interpolaÃ§Ã£o bilinear Ã© usada para suavizar os pixels transformados, calculando uma mÃ©dia ponderada entre os pixels adjacentes, evitando artefatos visuais.
+A interpolação bilinear é usada para suavizar os pixels transformados, calculando uma média ponderada entre os pixels adjacentes, evitando artefatos visuais.
 
-## InstruÃ§Ãµes de Uso
-### ExecuÃ§Ã£o via setup.py
+## Instruções de Uso
+### Execução via setup.py
 
 Este projeto foi configurado para ser instalado via o arquivo `setup.py`. Para instalar e rodar o projeto, siga os seguintes passos:
 
-1. No terminal, navegue atÃ© o diretÃ³rio do projeto onde estÃ¡ o arquivo `setup.py`.
+1. No terminal, navegue até o diretório do projeto onde está o arquivo `setup.py`.
 2. Instale o projeto localmente com o comando:
 
    ```
    pip install .
    ```
 
-3. ApÃ³s a instalaÃ§Ã£o, vocÃª pode rodar o programa com o comando:
+3. Após a instalação, você pode rodar o programa com o comando:
 
    ```
    demo
@@ -74,12 +74,12 @@ Este projeto foi configurado para ser instalado via o arquivo `setup.py`. Para i
 
 ### Controles
 
-- **W**: Aumenta a velocidade da rotaÃ§Ã£o.
-- **S**: Diminui a velocidade da rotaÃ§Ã£o.
+- **W**: Aumenta a velocidade da rotação.
+- **S**: Diminui a velocidade da rotação.
 - **A**: Aumenta o cisalhamento horizontal.
 - **D**: Diminui o cisalhamento horizontal.
 - **Q**: Fecha o programa.
 
 ## Autores
 
-Desenvolvido por [JoÃ£o Delomo](https://github.com/JoaoDelomo) e [Mateus Porto](https://github.com/Mateus1711-ctrl).
+Desenvolvido por [João Delomo](https://github.com/JoaoDelomo) e [Mateus Porto](https://github.com/Mateus1711-ctrl).
