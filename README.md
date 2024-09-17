@@ -21,29 +21,21 @@ O sistema utiliza **matrizes de transformação** para realizar rotação e cisa
 
 #### Rotação
 
-A rotação é feita com a seguinte matriz de rotação:
+A rotação é feita com a matriz de rotação:
 
-\[
-R(\theta) =
-\begin{bmatrix}
-\cos(\theta) & -\sin(\theta) & 0 \\
-\sin(\theta) & \cos(\theta) & 0 \\
-0 & 0 & 1
-\end{bmatrix}
-\]
+R(θ) =
+[ cos(θ), -sin(θ), 0 ]
+[ sin(θ), cos(θ), 0 ]
+[ 0, 0, 1 ]
 
 #### Cisalhamento
 
 O cisalhamento horizontal é realizado com a seguinte matriz:
 
-\[
 S =
-\begin{bmatrix}
-1 & \text{shear\_factor} & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1
-\end{bmatrix}
-\]
+[ 1, shear_factor, 0 ]
+[ 0, 1, 0 ]
+[ 0, 0, 1 ]
 
 #### Interpolação Bilinear
 
