@@ -1,2 +1,0 @@
-[console_scripts]
-cam_tempo = cam_tempo.demo:main
