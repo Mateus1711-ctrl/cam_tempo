@@ -21,12 +21,12 @@ O sistema utiliza **matrizes de transformação** para realizar rotação e cisa
 
 #### Rotação
 
-A rotação é feita com a matriz de rotação:
+A rotação é feita com a seguinte matriz de rotação:
 
-R(θ) =
-[ cos(θ), -sin(θ), 0 ]
-[ sin(θ), cos(θ), 0 ]
-[ 0, 0, 1 ]
+R(θ) = 
+[ cos(θ), -sin(θ),  0 ]
+[ sin(θ),  cos(θ),  0 ]
+[   0,      0,     1 ]
 
 #### Cisalhamento
 
@@ -34,14 +34,15 @@ O cisalhamento horizontal é realizado com a seguinte matriz:
 
 S =
 [ 1, shear_factor, 0 ]
-[ 0, 1, 0 ]
-[ 0, 0, 1 ]
+[ 0,      1,      0 ]
+[ 0,      0,      1 ]
 
 #### Interpolação Bilinear
 
 A interpolação bilinear é usada para suavizar os pixels transformados, calculando uma média ponderada entre os pixels adjacentes, evitando artefatos visuais.
 
 ## Instruções de Uso
+
 ### Execução via setup.py
 
 Este projeto foi configurado para ser instalado via o arquivo `setup.py`. Para instalar e rodar o projeto, siga os seguintes passos:
@@ -49,15 +50,11 @@ Este projeto foi configurado para ser instalado via o arquivo `setup.py`. Para i
 1. No terminal, navegue até o diretório do projeto onde está o arquivo `setup.py`.
 2. Instale o projeto localmente com o comando:
 
-   ```
    pip install .
-   ```
 
 3. Após a instalação, você pode rodar o programa com o comando:
 
-   ```
    cam_tempo
-   ```
 
 ### Controles
 
